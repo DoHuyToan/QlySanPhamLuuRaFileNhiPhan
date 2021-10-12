@@ -33,8 +33,11 @@ public class Main {
 
     public static void readOject(){
         try {
+            //tạo liên kết với file để đọc
             InputStream is = new FileInputStream("demo.txt");
+            //tạo đối tượng con của ObjectInputStream
             ObjectInputStream ois = new ObjectInputStream(is);
+            //tạo list để hứng phẩn tử sau khi đọc từ file
             List<Product> newProductList = (List<Product>)ois.readObject();
             for (Product p:newProductList) {
                 System.out.println(p);
@@ -46,8 +49,5 @@ public class Main {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-
-
     }
-
 }
